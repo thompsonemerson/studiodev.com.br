@@ -4,9 +4,9 @@ const CAROUSEL_ITEMS = [...HOME_TECH_STACK, ...HOME_TECH_STACK];
 
 export function TechStackCarousel() {
   return (
-    <section className="py-20 bg-slate-900 text-white">
+    <section className="py-20 bg-slate-900 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-12">
           <div className="md:w-1/3">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Stack Tecnológico Enterprise</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -15,7 +15,7 @@ export function TechStackCarousel() {
             </p>
           </div>
           <div
-            className="md:w-2/3 overflow-hidden"
+            className="w-full min-w-0 md:w-2/3 overflow-hidden"
             style={{
               maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
               WebkitMaskImage:
