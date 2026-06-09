@@ -11,7 +11,10 @@
    Do instead: run `npm run typecheck` then `npm run build` before merging.
 
 ## Domain Behavior Guardrails
-1. **[2026-06-09] Layered src/ structure**
+1. **[2026-06-09] SPA reload needs host fallback**
+   Do instead: keep `vercel.json`, `public/_redirects`, `public/.htaccess` so `/servicos` etc. serve `index.html` in production.
+
+2. **[2026-06-09] Layered src/ structure**
    Do instead: `lib/` utils, `content/` copy, `components/ui|shared|layout/`, `features/{domain}/`, `pages/` routes.
 
 2. **[2026-06-09] cn() lives in lib/cn.ts**
