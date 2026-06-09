@@ -20,6 +20,12 @@
 3. **[2026-06-09] Contact form is client-only placeholder**
    Do instead: wire `useContactForm` to backend/CRM when API exists; keep honeypot + validation.
 
+4. **[2026-06-09] Animations are CSS-first, no motion lib**
+   Do instead: use `src/styles/animations.css` + `Reveal` (IntersectionObserver); hero LCP via `OptimizedImage priority` + preload in `index.html`.
+
+5. **[2026-06-09] Toasts load on demand**
+   Do instead: call `toastError`/`toastSuccess` from `lib/toast.ts`; never import `sonner` directly in layout.
+
 ## User Directives
 1. **[2026-06-09] Componentize; extract logic to hooks**
    Do instead: new behavior → `hooks/`; cross-page UI → `components/shared/`; page-specific → `features/`.

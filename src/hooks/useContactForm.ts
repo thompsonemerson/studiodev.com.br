@@ -1,5 +1,5 @@
-import { useCallback, useState } from "react";
-import { toast } from "sonner";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { toastError, toastSuccess } from "@/lib/toast";
 
 const MAX_LENGTHS = {
   name: 120,
@@ -54,6 +54,11 @@ function validateForm(data: ContactFormData): string | null {
 export function useContactForm() {
   const [form, setForm] = useState<ContactFormData>(INITIAL_FORM);
   const [loading, setLoading] = useState(false);
+  const formRef = useRef(form);
+
+  useEffect(() => {
+    formRef.current = form;
+  }, [form]);
 
   const updateField = useCallback(
     <K extends keyof ContactFormData>(field: K, value: ContactFormData[K]) => {
@@ -62,39 +67,37 @@ export function useContactForm() {
     [],
   );
 
-  const handleSubmit = useCallback(
-    (event: { preventDefault: () => void }) => {
-      event.preventDefault();
+  const handleSubmit = useCallback((event: { preventDefault: () => void }) => {
+    event.preventDefault();
 
-      const payload: ContactFormData = {
-        name: trimField(form.name, MAX_LENGTHS.name),
-        company: trimField(form.company, MAX_LENGTHS.company),
-        email: trimField(form.email, MAX_LENGTHS.email).toLowerCase(),
-        phone: trimField(form.phone, MAX_LENGTHS.phone),
-        interest: form.interest,
-        message: trimField(form.message, MAX_LENGTHS.message),
-        website: form.website,
-      };
+    const current = formRef.current;
+    const payload: ContactFormData = {
+      name: trimField(current.name, MAX_LENGTHS.name),
+      company: trimField(current.company, MAX_LENGTHS.company),
+      email: trimField(current.email, MAX_LENGTHS.email).toLowerCase(),
+      phone: trimField(current.phone, MAX_LENGTHS.phone),
+      interest: current.interest,
+      message: trimField(current.message, MAX_LENGTHS.message),
+      website: current.website,
+    };
 
-      const error = validateForm(payload);
-      if (error) {
-        toast.error(error);
-        return;
-      }
+    const error = validateForm(payload);
+    if (error) {
+      void toastError(error);
+      return;
+    }
 
-      setLoading(true);
+    setLoading(true);
 
-      // Placeholder até integração com backend/CRM.
-      window.setTimeout(() => {
-        setLoading(false);
-        setForm(INITIAL_FORM);
-        toast.success(
-          "Solicitação enviada. Um consultor entrará em contato comercial em breve.",
-        );
-      }, 1500);
-    },
-    [form],
-  );
+    // Placeholder até integração com backend/CRM.
+    window.setTimeout(() => {
+      setLoading(false);
+      setForm(INITIAL_FORM);
+      void toastSuccess(
+        "Solicitação enviada. Um consultor entrará em contato comercial em breve.",
+      );
+    }, 1500);
+  }, []);
 
   return { form, loading, updateField, handleSubmit };
 }

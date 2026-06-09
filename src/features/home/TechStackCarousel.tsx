@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { HOME_TECH_STACK } from "@/content/home";
 
 const CAROUSEL_ITEMS = [...HOME_TECH_STACK, ...HOME_TECH_STACK];
@@ -23,11 +22,7 @@ export function TechStackCarousel() {
                 "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
             }}
           >
-            <motion.div
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
-              className="flex gap-6 w-max"
-            >
+            <div className="flex gap-6 w-max animate-marquee motion-reduce:animate-none">
               {CAROUSEL_ITEMS.map((stack, index) => (
                 <div
                   key={`${stack.title}-${index}`}
@@ -38,7 +33,7 @@ export function TechStackCarousel() {
                   <p className="text-slate-400 text-xs">{stack.tools}</p>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

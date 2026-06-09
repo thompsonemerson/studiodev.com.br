@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { SectionBadge } from "./SectionBadge";
 
 type PageHeaderProps = {
@@ -11,19 +10,19 @@ type PageHeaderProps = {
 export function PageHeader({ badge, title, description, children }: PageHeaderProps) {
   return (
     <div className="mb-16 border-b border-slate-200 pb-12">
-      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+      <div className="animate-fade-in-up-sm motion-reduce:animate-none">
         {children ?? (
           <>
-            {badge && <SectionBadge className="mb-4">{badge}</SectionBadge>}
-            {title && (
+            {badge ? <SectionBadge className="mb-4">{badge}</SectionBadge> : null}
+            {title ? (
               <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">{title}</h1>
-            )}
-            {description && (
+            ) : null}
+            {description ? (
               <p className="text-xl text-slate-600 max-w-3xl leading-relaxed">{description}</p>
-            )}
+            ) : null}
           </>
         )}
-      </motion.div>
+      </div>
     </div>
   );
 }

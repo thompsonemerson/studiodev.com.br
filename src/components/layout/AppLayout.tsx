@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { Outlet } from "react-router";
-import { Toaster } from "sonner";
+import { DeferredToaster } from "@/components/shared/DeferredToaster";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { useRouteChange } from "@/hooks/useRouteChange";
@@ -28,7 +28,7 @@ export function AppLayout() {
         <Outlet />
       </main>
 
-      <Toaster theme="light" />
+      <DeferredToaster />
       <Footer />
     </div>
   );
