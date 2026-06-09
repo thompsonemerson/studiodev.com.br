@@ -1,9 +1,6 @@
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import {
-  ServiceFeaturedCard,
-  ServiceSideCard,
-} from "@/features/home/components/ServiceBentoCards";
+import { ServiceFeaturedCard, ServiceSideCard } from "@/components/shared/ServiceCards";
 import { HOME_IMAGES, HOME_SERVICES } from "@/content/home";
 
 export function CoreServicesSection() {
@@ -23,6 +20,7 @@ export function CoreServicesSection() {
               service={featured}
               imageSrc={HOME_IMAGES.dashboard}
               imageAlt="Dashboard de sistema corporativo com indicadores e métricas operacionais"
+              linkTo="/servicos"
             />
           </Reveal>
 
@@ -32,7 +30,11 @@ export function CoreServicesSection() {
               delay={0.1 + index * 0.05}
               className="lg:col-span-5"
             >
-              <ServiceSideCard service={service} variant={index === 0 ? "light" : "dark"} />
+              <ServiceSideCard
+                service={service}
+                variant={index === 0 ? "light" : "dark"}
+                linkTo="/servicos"
+              />
             </Reveal>
           ))}
         </div>

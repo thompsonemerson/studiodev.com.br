@@ -13,14 +13,21 @@ type ServiceFeaturedCardProps = {
   service: ServiceItem;
   imageSrc: string;
   imageAlt: string;
+  linkTo?: string;
 };
 
 type ServiceSideCardProps = {
   service: ServiceItem;
-  variant: "light" | "dark";
+  variant?: "light" | "dark" | "neutral";
+  linkTo?: string;
 };
 
-export function ServiceFeaturedCard({ service, imageSrc, imageAlt }: ServiceFeaturedCardProps) {
+export function ServiceFeaturedCard({
+  service,
+  imageSrc,
+  imageAlt,
+  linkTo,
+}: ServiceFeaturedCardProps) {
   const Icon = service.icon;
 
   return (
@@ -37,36 +44,54 @@ export function ServiceFeaturedCard({ service, imageSrc, imageAlt }: ServiceFeat
         </div>
         <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
         <p className="text-slate-200 mb-6 max-w-md leading-relaxed">{service.desc}</p>
-        <TextLink to="/servicos" variant="onImage" />
+        {linkTo ? <TextLink to={linkTo} variant="onImage" /> : null}
       </div>
     </div>
   );
 }
 
-export function ServiceSideCard({ service, variant }: ServiceSideCardProps) {
+const sideVariantStyles = {
+  light: {
+    card: "bg-blue-50 ring-blue-100",
+    icon: "bg-blue-600 text-white",
+    text: "text-slate-600",
+    link: "light" as const,
+  },
+  dark: {
+    card: "bg-slate-900 text-white ring-slate-800",
+    icon: "bg-blue-600/20 text-blue-400",
+    text: "text-slate-300",
+    link: "dark" as const,
+  },
+  neutral: {
+    card: "bg-white ring-slate-200",
+    icon: "bg-blue-50 text-blue-600 border border-blue-100",
+    text: "text-slate-600",
+    link: "light" as const,
+  },
+};
+
+export function ServiceSideCard({
+  service,
+  variant = "light",
+  linkTo,
+}: ServiceSideCardProps) {
   const Icon = service.icon;
-  const isLight = variant === "light";
+  const styles = sideVariantStyles[variant];
 
   return (
-    <div
-      className={cn(
-        "h-full rounded-2xl p-8 ring-1",
-        isLight ? "bg-blue-50 ring-blue-100" : "bg-slate-900 text-white ring-slate-800",
-      )}
-    >
+    <div className={cn("h-full rounded-2xl p-8 ring-1", styles.card)}>
       <div
         className={cn(
           "mb-6 flex h-12 w-12 items-center justify-center rounded-xl",
-          isLight ? "bg-blue-600 text-white" : "bg-blue-600/20 text-blue-400",
+          styles.icon,
         )}
       >
         <Icon className="h-6 w-6" strokeWidth={1.75} />
       </div>
       <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-      <p className={cn("mb-6 leading-relaxed", isLight ? "text-slate-600" : "text-slate-300")}>
-        {service.desc}
-      </p>
-      <TextLink to="/servicos" variant={isLight ? "light" : "dark"} />
+      <p className={cn("leading-relaxed", linkTo ? "mb-6" : "", styles.text)}>{service.desc}</p>
+      {linkTo ? <TextLink to={linkTo} variant={styles.link} /> : null}
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import { Building, Mail, Phone } from "lucide-react";
+import { PageContainer } from "@/components/layout/PageContainer";
 import { ContactForm } from "@/features/contact/ContactForm";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SITE } from "@/config/site";
 
 export function Contato() {
   return (
-    <div className="pt-12 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+    <PageContainer>
       <PageHeader
         badge="Contato Corporativo"
         title="Fale com um Especialista"
@@ -18,8 +19,8 @@ export function Contato() {
             <h3 className="text-lg font-bold text-slate-900 mb-6">Canais de Atendimento</h3>
 
             <div className="space-y-6">
-              <div className="flex items-start">
-                <Mail className="w-5 h-5 text-blue-600 mr-4 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <Mail className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" strokeWidth={1.75} />
                 <div>
                   <p className="text-sm font-bold text-slate-900">E-mail Comercial</p>
                   <a
@@ -31,8 +32,8 @@ export function Contato() {
                 </div>
               </div>
 
-              <div className="flex items-start">
-                <Phone className="w-5 h-5 text-blue-600 mr-4 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <Phone className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" strokeWidth={1.75} />
                 <div>
                   <p className="text-sm font-bold text-slate-900">Telefone</p>
                   <p className="text-sm text-slate-600">{SITE.phone}</p>
@@ -42,7 +43,7 @@ export function Contato() {
           </div>
 
           <div className="bg-slate-900 text-white rounded-lg p-8 shadow-md">
-            <Building className="w-8 h-8 text-blue-400 mb-4" />
+            <Building className="w-8 h-8 text-blue-400 mb-4" strokeWidth={1.75} />
             <h3 className="text-lg font-bold mb-2">Para Empresas</h3>
             <p className="text-slate-300 text-sm leading-relaxed">
               Atendemos organizações de médio e grande porte, focando em projetos de missão crítica,
@@ -58,6 +59,6 @@ export function Contato() {
           </div>
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 }
