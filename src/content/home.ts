@@ -93,4 +93,6 @@ export const HOME_IMAGES = {
   hero: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBzb2Z0d2FyZSUyMGVuZ2luZWVyaW5nJTIwdGVhbSUyMG9mZmljZXxlbnwxfHx8fDE3ODAxNTcxNDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
   meeting:
     "https://images.unsplash.com/photo-1559136555-9303baea8ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHBlb3BsZSUyMG1vZGVybiUyMG9mZmljZXxlbnwxfHx8fDE3ODAxNTcxNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  dashboard:
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 } as const;

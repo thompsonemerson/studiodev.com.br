@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/shared/SectionHeading";
 
 type CtaSectionProps = {
   title: string;
@@ -19,8 +20,12 @@ export function CtaSection({
   return (
     <section className={className}>
       <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{title}</h2>
-        <p className="text-xl text-slate-600 mb-10">{description}</p>
+        <SectionHeading
+          title={title}
+          description={description}
+          descriptionClassName="text-xl"
+          className="mb-10"
+        />
         <Link to={buttonHref}>
           <Button size="lg">{buttonText}</Button>
         </Link>
