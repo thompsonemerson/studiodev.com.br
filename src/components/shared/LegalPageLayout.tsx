@@ -27,7 +27,7 @@ export function LegalPageLayout({ icon: Icon, config, sections }: LegalPageLayou
             <h1 className="text-3xl md:text-4xl font-extrabold text-white">{config.title}</h1>
           </div>
           <p className="text-slate-400 text-sm mt-4">
-            Última atualização: 01 de junho de 2026 &nbsp;·&nbsp; Versão 1.0
+            Última atualização: 01 de junho de 2026
           </p>
           <p className="text-slate-300 mt-4 max-w-2xl leading-relaxed">{config.description}</p>
         </div>
