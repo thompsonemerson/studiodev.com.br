@@ -3,6 +3,9 @@ type StudioDevLogoProps = {
 };
 
 export function StudioDevLogo({ white = false }: StudioDevLogoProps) {
+  const iconDark = white ? "#94a3b8" : "#0844c8";
+  const iconLight = white ? "#ffffff" : "#155dfc";
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,19 +16,19 @@ export function StudioDevLogo({ white = false }: StudioDevLogoProps) {
       aria-label="StudioDev Consulting"
     >
       <path
-        fill="#0844c8"
+        fill={iconDark}
         d="M49.736 58.75a4 4 0 0 1-5.656 0l-4.343-4.343a4 4 0 0 1 0-5.657l7.7-7.7-8.285-8.285a4 4 0 0 1 0-5.657l15.492-15.492a4 4 0 0 1 5.657 0L75.754 27.07a3.98 3.98 0 0 1 1.143 2.348 4 4 0 0 1-1.142 3.312z"
       />
       <path
-        fill="#155dfc"
+        fill={iconLight}
         d="M60.305 48.186a4 4 0 0 1-5.656 0l-4.343-4.343a4 4 0 0 1 0-5.656l8.285-8.285-8.286-8.284a4 4 0 0 1 0-5.657l4.343-4.343a4 4 0 0 1 5.657 0l15.453 15.453a3.98 3.98 0 0 1 1.159 2.504 4 4 0 0 1-1.158 3.158z"
       />
       <path
-        fill="#0844c8"
+        fill={iconDark}
         d="M27.193 1.171a4 4 0 0 1 5.657 0l4.343 4.343a4 4 0 0 1 0 5.657l-7.7 7.7 8.285 8.285a4 4 0 0 1 0 5.657L22.286 48.305a4 4 0 0 1-5.657 0L1.176 32.852a4 4 0 0 1-1.143-2.348 4 4 0 0 1 1.142-3.313z"
       />
       <path
-        fill="#155dfc"
+        fill={iconLight}
         d="M16.625 11.736a4 4 0 0 1 5.656 0l4.343 4.342a4 4 0 0 1 0 5.657l-8.284 8.283 8.285 8.285a4 4 0 0 1 0 5.657l-4.343 4.343a4 4 0 0 1-5.657 0L1.172 32.85a4 4 0 0 1-1.13-3.403 4 4 0 0 1 1.13-2.258z"
       />
       <path
