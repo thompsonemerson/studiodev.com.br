@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "resend": {
+      "command": "npx",
+      "args": ["-y", "envmcp", "--env-file", ".env", "npx", "-y", "resend-mcp"]
+    }
+  }
+}
