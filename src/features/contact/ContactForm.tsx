@@ -14,7 +14,7 @@ const inputClassName =
   "w-full border border-slate-300 rounded px-4 py-2.5 text-slate-900 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all";
 
 export function ContactForm() {
-  const { form, loading, updateField, handleSubmit } = useContactForm();
+  const { form, loading, status, updateField, handleSubmit } = useContactForm();
 
   return (
     <form onSubmit={handleSubmit} className="relative space-y-6" noValidate>
@@ -134,10 +134,28 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="pt-2">
+      <div className="pt-2 space-y-4">
         <Button type="submit" variant="primary" size="lg" className="w-full md:w-auto" disabled={loading}>
           {loading ? "Processando..." : "Enviar Solicitação Comercial"}
         </Button>
+
+        {status.type === "success" && (
+          <p
+            role="status"
+            className="rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800"
+          >
+            {status.message}
+          </p>
+        )}
+
+        {status.type === "error" && (
+          <p
+            role="alert"
+            className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+          >
+            {status.message}
+          </p>
+        )}
       </div>
     </form>
   );
