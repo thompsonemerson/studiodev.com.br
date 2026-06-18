@@ -7,6 +7,10 @@ export const SITE = {
     legal: "juridico@studiodev.com.br",
   },
   phone: "+55 (85) 999931361",
+  url: "https://studiodev.com.br",
+  assets: {
+    logoSymbol: "https://studiodev.com.br/apple-touch-icon.png",
+  },
   description:
     "Consultoria e desenvolvimento de software. Transformamos desafios operacionais em plataformas digitais escaláveis.",
 } as const;
