@@ -1,4 +1,4 @@
-import { requestToasterMount } from "@/components/shared/DeferredToaster";
+import { requestToasterMount, ensureToasterReady } from "@/components/shared/DeferredToaster";
 
 type SonnerModule = typeof import("sonner");
 
@@ -6,6 +6,7 @@ let sonnerModule: SonnerModule | null = null;
 
 async function getSonner() {
   requestToasterMount();
+  await ensureToasterReady();
 
   if (!sonnerModule) {
     sonnerModule = await import("sonner");

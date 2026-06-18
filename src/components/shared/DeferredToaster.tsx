@@ -3,9 +3,32 @@ import { lazy, Suspense, useEffect, useState } from "react";
 const Toaster = lazy(() => import("sonner").then((module) => ({ default: module.Toaster })));
 
 let mountToaster: (() => void) | null = null;
+let resolveToasterReady: (() => void) | null = null;
+let toasterReady = false;
+
+const toasterReadyPromise = new Promise<void>((resolve) => {
+  resolveToasterReady = () => {
+    if (toasterReady) return;
+    toasterReady = true;
+    resolve();
+  };
+});
 
 export function requestToasterMount() {
   mountToaster?.();
+}
+
+export function ensureToasterReady() {
+  requestToasterMount();
+  return toasterReadyPromise;
+}
+
+function ToasterReady({ onReady }: { onReady: () => void }) {
+  useEffect(() => {
+    onReady();
+  }, [onReady]);
+
+  return <Toaster theme="light" position="top-center" richColors closeButton />;
 }
 
 export function DeferredToaster() {
@@ -22,7 +45,7 @@ export function DeferredToaster() {
 
   return (
     <Suspense fallback={null}>
-      <Toaster theme="light" />
+      <ToasterReady onReady={() => resolveToasterReady?.()} />
     </Suspense>
   );
 }
