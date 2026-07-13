@@ -1,4 +1,5 @@
 import { CtaSection } from "@/components/shared/CtaSection";
+import { AiAppliedSection } from "@/features/home/AiAppliedSection";
 import { CoreServicesSection } from "@/features/home/CoreServicesSection";
 import { HeroSection } from "@/features/home/HeroSection";
 import { MethodologySection } from "@/features/home/MethodologySection";
@@ -12,6 +13,7 @@ export function Home() {
       <HeroSection />
       <TrustBanner />
       <CoreServicesSection />
+      <AiAppliedSection />
       <MethodologySection />
       <TechStackCarousel />
       <WhyChooseUsSection />

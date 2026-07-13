@@ -28,8 +28,8 @@ export function HeroSection() {
             Desenvolvemos software que impulsiona negócios.
           </h1>
           <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
-            Criamos sistemas, aplicativos, integrações e soluções inteligentes para empresas que
-            precisam evoluir seus processos, produtos e operações.
+            Criamos sistemas, aplicativos, integrações e automação com IA aplicada — para empresas
+            que precisam evoluir processos, produtos e operações com critério de engenharia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="/contato">

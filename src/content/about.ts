@@ -4,7 +4,7 @@ export const ABOUT_VALUES: { icon: LucideIcon; title: string; desc: string }[] =
   {
     icon: Shield,
     title: "Visão de Negócio",
-    desc: "Entendemos o seu mercado e os desafios da operação antes de propor tecnologia. Não vendemos inovação por tendência, mas ferramentas para gerar eficiência.",
+    desc: "Entendemos o seu mercado e os desafios da operação antes de propor tecnologia. Não vendemos IA por tendência: avaliamos onde modelo, automação ou integração gera eficiência — e onde código clássico resolve melhor.",
   },
   {
     icon: Award,
