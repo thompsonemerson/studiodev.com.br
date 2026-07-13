@@ -14,10 +14,9 @@ import {
 } from "lucide-react";
 
 export const HOME_STATS = [
-  { label: "Projetos Entregues", value: "85+" },
-  { label: "Tecnologias", value: "20+" },
-  { label: "Clientes Corporativos", value: "40+" },
-  { label: "Anos de Experiência", value: "10+" },
+  { label: "Projetos Entregues", value: "40+" },
+  { label: "Clientes Corporativos", value: "20+" },
+  { label: "Anos de Experiência", value: "13" },
 ] as const;
 
 export const HOME_SERVICES: {
