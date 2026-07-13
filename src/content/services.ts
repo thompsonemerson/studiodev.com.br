@@ -12,6 +12,7 @@ import {
   Server,
   Smartphone,
   Users,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
 
@@ -38,15 +39,39 @@ export const SERVICES: { title: string; icon: LucideIcon; desc: string }[] = [
   },
   {
     title: "Automação e RPA",
-    icon: Server,
-    desc: "Mapeamento e automação de fluxos operacionais repetitivos, processamento de dados em lote e geração de relatórios.",
+    icon: Workflow,
+    desc: "Mapeamento e orquestração de fluxos com Power Automate, n8n e RPA: processamento em lote, integrações e relatórios sem retrabalho manual.",
   },
   {
     title: "Inteligência Artificial",
-    icon: Cpu,
-    desc: "Implementação de assistentes inteligentes, análise de dados avançada, OCR e integração de LLMs em processos de negócio.",
+    icon: BrainCircuit,
+    desc: "Assistentes internos, OCR, LLMs e RAG embutidos em sistemas e processos, com arquitetura, governança e ownership do cliente.",
   },
 ];
+
+export const AI_CAPABILITIES: {
+  title: string;
+  description: string;
+  offerings: { title: string; desc: string }[];
+} = {
+  title: "Inteligência Artificial & Automação Inteligente",
+  description:
+    "Projetamos e embutimos capacidade de IA em aplicações e fluxos operacionais, com arquitetura sólida, segurança e transferência de conhecimento.",
+  offerings: [
+    {
+      title: "Automações",
+      desc: "Power Automate, n8n e orquestração entre ERP, CRM, e-mail e planilhas: fluxos previsíveis e auditáveis.",
+    },
+    {
+      title: "IA generativa",
+      desc: "Assistentes internos, geração e revisão de conteúdo, suporte a atendimento e copilots no backoffice.",
+    },
+    {
+      title: "RAG e dados",
+      desc: "Busca semântica em documentos, políticas e tickets; respostas com fonte; OCR + LLM em pipelines de documento.",
+    },
+  ],
+};
 
 export const CTO_FEATURES = [
   "Arquitetura de Soluções",
@@ -80,6 +105,17 @@ export const TECH_STACK_CATEGORIES = [
     icon: Smartphone,
     title: "Mobile",
     items: ["React Native", "Flutter", "SwiftUI"],
+  },
+  {
+    icon: BrainCircuit,
+    title: "IA & Automação",
+    items: [
+      "Power Automate",
+      "n8n",
+      "OpenAI / Azure OpenAI",
+      "Python",
+      "Vector DB / embeddings",
+    ],
   },
 ] as const;
 

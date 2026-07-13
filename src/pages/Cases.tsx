@@ -2,7 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { CASE_TESTIMONIAL, CASES } from "@/content/cases";
+import { AI_SCENARIOS, CASE_TESTIMONIAL, CASES } from "@/content/cases";
 
 export function Cases() {
   return (
@@ -10,7 +10,7 @@ export function Cases() {
       <PageHeader
         badge="Casos de Sucesso"
         title="Resultados Reais"
-        description="Conheça como ajudamos nossos clientes a superar desafios operacionais, escalar seus negócios e reduzir custos através da engenharia de software e automação."
+        description="Conheça como ajudamos nossos clientes a superar desafios operacionais, escalar negócios e reduzir custos com engenharia de software, automação e IA aplicada."
       />
 
       <div className="space-y-12">
@@ -50,11 +50,39 @@ export function Cases() {
         ))}
       </div>
 
-      <div className="mt-20">
+      <div className="mt-24 pt-16 border-t border-slate-200">
         <SectionHeading
-          title="O que nossos clientes dizem"
-          className="mb-10"
+          title="Cenários típicos de IA e automação"
+          description="Situações recorrentes em que embutimos automações, LLMs ou RAG na operação, sem inventar caso de cliente. Cada entrega parte do seu processo e dos seus dados."
+          className="mb-12"
         />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {AI_SCENARIOS.map((scenario) => (
+            <div
+              key={scenario.title}
+              className="bg-slate-50 p-8 rounded-lg border border-slate-200"
+            >
+              <p className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">
+                Cenário típico
+              </p>
+              <h3 className="text-lg font-bold text-slate-900 mb-4">{scenario.title}</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900 mb-1">Problema</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">{scenario.problem}</p>
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900 mb-1">Abordagem</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">{scenario.approach}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-20">
+        <SectionHeading title="O que nossos clientes dizem" className="mb-10" />
         <div className="max-w-3xl mx-auto bg-slate-900 text-white rounded-xl p-10 shadow-lg">
           <p className="text-lg italic leading-relaxed mb-6">"{CASE_TESTIMONIAL.quote}"</p>
           <div className="flex flex-col items-center text-center">

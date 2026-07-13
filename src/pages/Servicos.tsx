@@ -1,8 +1,9 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, UserCog } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import {
+  AI_CAPABILITIES,
   BrainCircuit,
   CTO_FEATURES,
   DELIVERY_STANDARDS,
@@ -32,10 +33,34 @@ export function Servicos() {
         ))}
       </div>
 
+      <div
+        id="ia"
+        className="mb-24 scroll-mt-28 bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col shadow-sm relative"
+      >
+        <div className="absolute top-0 left-0 w-1.5 h-full bg-blue-600" />
+        <div className="bg-slate-50 p-8 md:p-12 border-b border-slate-200 pl-10 md:pl-12">
+          <BrainCircuit className="w-12 h-12 text-blue-600 mb-6" strokeWidth={1.75} />
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            {AI_CAPABILITIES.title}
+          </h2>
+          <p className="text-slate-600 leading-relaxed text-lg max-w-3xl">
+            {AI_CAPABILITIES.description}
+          </p>
+        </div>
+        <div className="p-8 md:p-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {AI_CAPABILITIES.offerings.map((offering) => (
+            <div key={offering.title}>
+              <h3 className="text-lg font-bold text-slate-900 mb-3">{offering.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">{offering.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="mb-24 bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col md:flex-row shadow-sm relative">
         <div className="absolute top-0 left-0 w-1.5 h-full bg-blue-600" />
         <div className="bg-slate-50 p-8 md:p-12 md:w-1/3 flex flex-col items-start justify-center border-b md:border-b-0 md:border-r border-slate-200 pl-10 md:pl-12">
-          <BrainCircuit className="w-12 h-12 text-blue-600 mb-6" strokeWidth={1.75} />
+          <UserCog className="w-12 h-12 text-blue-600 mb-6" strokeWidth={1.75} />
           <h2 className="text-2xl font-bold text-slate-900 mb-3">CTO as a Service</h2>
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-800 border border-blue-200">
             Consultoria Estratégica
@@ -68,7 +93,7 @@ export function Servicos() {
           className="max-w-2xl mb-12"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {TECH_STACK_CATEGORIES.map((category) => (
             <div key={category.title}>
               <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center border-b border-slate-200 pb-2">

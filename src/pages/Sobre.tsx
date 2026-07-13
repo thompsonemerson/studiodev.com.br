@@ -10,7 +10,7 @@ export function Sobre() {
         badge="Sobre a Empresa"
         title="Tecnologia, Estratégia e Confiança."
         description="Desde 2013, somos parceiros tecnológicos de empresas que precisam desenvolver produtos digitais, modernizar operações e construir soluções escaláveis."
-        extraDescription="A StudioDev não é uma agência criativa ou uma fábrica de software focada em volume. Somos uma consultoria boutique de engenharia de software focada em qualidade, arquitetura sólida e resolução de problemas reais de negócios."
+        extraDescription="A StudioDev não é uma agência criativa ou uma fábrica de software focada em volume. Somos uma consultoria boutique de engenharia de software focada em qualidade, arquitetura sólida e resolução de problemas reais, inclusive potencializando operações com automação e IA aplicada, com critério."
         media={{ src: ABOUT_IMAGE, alt: "Equipe corporativa de tecnologia" }}
       />
 

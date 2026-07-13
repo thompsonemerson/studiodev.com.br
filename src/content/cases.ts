@@ -13,9 +13,9 @@ export const CASES = [
     title: "Automação Inteligente de Backoffice",
     industry: "Serviços Financeiros",
     challenge:
-      "Equipe sobrecarregada com tarefas repetitivas de análise de documentos não estruturados, gerando gargalos e atrasos nas aprovações de crédito de clientes.",
+      "Equipe sobrecarregada com análise manual de documentos não estruturados (PDFs, formulários e anexos), gerando gargalos e atrasos nas aprovações de crédito.",
     solution:
-      "Implementação de um pipeline de automação (RPA) aliado à Inteligência Artificial (OCR e LLM). O sistema extrai automaticamente dados de PDFs, cruza com bancos de dados públicos e pré-aprova fluxos.",
+      "Pipeline de automação com OCR e LLM: extração estruturada de dados dos documentos, cruzamento com bases internas e públicas, e pré-aprovação assistida nos fluxos de crédito, com trilha de auditoria para a equipe humana.",
     result:
       "Aumento da capacidade de análise em 300% sem necessidade de aumento de quadro de funcionários.",
   },
@@ -28,6 +28,30 @@ export const CASES = [
       "Construção de uma arquitetura de microsserviços baseada em mensageria para atuar como barramento de integração, garantindo que o estoque, pedidos e status de clientes estivessem sempre sincronizados em tempo real.",
     result:
       "Garantia de integridade de dados e liberação de 15 horas semanais por vendedor.",
+  },
+] as const;
+
+export const AI_SCENARIOS = [
+  {
+    title: "Base de conhecimento com RAG",
+    problem:
+      "Equipes de suporte e operação perdem tempo buscando procedimentos em pastas, wikis e e-mails desatualizados.",
+    approach:
+      "Indexação semântica de documentos e políticas internas; assistente com respostas contextualizadas e referência à fonte, integrado ao canal que a equipe já usa.",
+  },
+  {
+    title: "Classificação e roteamento de demanda",
+    problem:
+      "Alto volume de e-mails e chamados sem triagem consistente, gerando fila e SLA comprometido.",
+    approach:
+      "Modelo de classificação + regras de negócio: priorização, roteamento para filas corretas e rascunhos de resposta, com revisão humana onde o risco exige.",
+  },
+  {
+    title: "Orquestração ERP ↔ CRM ↔ escritório",
+    problem:
+      "Dados e aprovações travados entre sistemas e planilhas; trabalho manual para manter o fluxo vivo.",
+    approach:
+      "Automações com Power Automate ou n8n no meio do processo e, quando faz sentido, LLM para extrair ou resumir conteúdo antes de gravar no sistema de registro.",
   },
 ] as const;
 

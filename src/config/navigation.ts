@@ -9,7 +9,7 @@ export const FOOTER_SERVICE_LINKS = [
   { label: "Desenvolvimento Web e Mobile", href: "/servicos" },
   { label: "Sistemas Corporativos", href: "/servicos" },
   { label: "Integração de Sistemas", href: "/servicos" },
-  { label: "Inteligência Artificial", href: "/servicos" },
+  { label: "Inteligência Artificial", href: "/servicos#ia" },
 ] as const;
 
 export const FOOTER_COMPANY_LINKS = [

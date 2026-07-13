@@ -1,20 +1,22 @@
 import {
   Building2,
+  Bot,
+  BrainCircuit,
   Cog,
   Cpu,
   Database,
+  FileSearch,
   Laptop,
   Server,
   Smartphone,
-  TrendingUp,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
 
 export const HOME_STATS = [
-  { label: "Projetos Entregues", value: "85+" },
-  { label: "Tecnologias", value: "20+" },
-  { label: "Clientes Corporativos", value: "40+" },
-  { label: "Anos de Experiência", value: "10+" },
+  { label: "Projetos Entregues", value: "40+" },
+  { label: "Clientes Corporativos", value: "20+" },
+  { label: "Anos de Experiência", value: "13" },
 ] as const;
 
 export const HOME_SERVICES: {
@@ -33,11 +35,38 @@ export const HOME_SERVICES: {
     desc: "Criação de portais, SaaS e aplicativos móveis focados em performance e escalabilidade.",
   },
   {
-    icon: TrendingUp,
+    icon: BrainCircuit,
     title: "Automação e IA",
-    desc: "Implementação de inteligência artificial e RPA para reduzir custos e aumentar a produtividade.",
+    desc: "Automações com Power Automate e n8n, LLMs e RAG embutidos nos processos, para reduzir custo e ciclo operacional.",
   },
 ];
+
+export const HOME_AI: {
+  title: string;
+  description: string;
+  pillars: { icon: LucideIcon; title: string; desc: string }[];
+} = {
+  title: "IA aplicada à operação",
+  description:
+    "Integramos automações, modelos e conhecimento interno aos sistemas que você já usa. Critério de engenharia: onde o modelo gera eficiência mensurável, e onde código clássico resolve melhor.",
+  pillars: [
+    {
+      icon: Workflow,
+      title: "Automações",
+      desc: "Fluxos com Power Automate e n8n conectando ERP, CRM, e-mail e planilhas: menos retrabalho, mais previsibilidade.",
+    },
+    {
+      icon: Bot,
+      title: "IA nos sistemas",
+      desc: "Assistentes internos, classificação, OCR e decisão assistida embutidos em backoffices e produtos digitais.",
+    },
+    {
+      icon: FileSearch,
+      title: "RAG e conhecimento",
+      desc: "Busca semântica em documentos, políticas e bases internas: respostas com contexto e rastreabilidade.",
+    },
+  ],
+};
 
 export const HOME_METHODOLOGY = [
   {
@@ -72,6 +101,11 @@ export const HOME_TECH_STACK: {
   { icon: Cpu, title: "Cloud & Devops", tools: "AWS, DigitalOcean, Docker, CI/CD" },
   { icon: Server, title: "Banco de Dados", tools: "SQL, MySQL, PostgreSQL, MongoDB" },
   { icon: Smartphone, title: "Mobile", tools: "React Native, Flutter, SwiftUI" },
+  {
+    icon: Workflow,
+    title: "IA & Automação",
+    tools: "n8n, Power Automate, OpenAI / Azure OpenAI, Python",
+  },
 ];
 
 export const HOME_WHY_US = [
