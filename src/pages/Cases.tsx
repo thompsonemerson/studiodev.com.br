@@ -53,7 +53,7 @@ export function Cases() {
       <div className="mt-24 pt-16 border-t border-slate-200">
         <SectionHeading
           title="Cenários típicos de IA e automação"
-          description="Situações recorrentes em que embutimos automações, LLMs ou RAG na operação — sem inventar caso de cliente. Cada entrega parte do seu processo e dos seus dados."
+          description="Situações recorrentes em que embutimos automações, LLMs ou RAG na operação, sem inventar caso de cliente. Cada entrega parte do seu processo e dos seus dados."
           className="mb-12"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

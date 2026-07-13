@@ -30,5 +30,8 @@
    Do instead: call `toastError`/`toastSuccess` from `lib/toast.ts`; never import `sonner` directly in layout.
 
 ## User Directives
-1. **[2026-06-09] Componentize; extract logic to hooks**
+1. **[2026-07-13] Copy: cirurgia, não reescrita**
+   Do instead: priorizar remoção de "—"; manter tom técnico; mudar pouco; não casualizar nem apagar jargão de engenharia.
+
+2. **[2026-06-09] Componentize; extract logic to hooks**
    Do instead: new behavior → `hooks/`; cross-page UI → `components/shared/`; page-specific → `features/`.

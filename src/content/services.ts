@@ -40,12 +40,12 @@ export const SERVICES: { title: string; icon: LucideIcon; desc: string }[] = [
   {
     title: "Automação e RPA",
     icon: Workflow,
-    desc: "Mapeamento e orquestração de fluxos com Power Automate, n8n e RPA — processamento em lote, integrações e relatórios sem retrabalho manual.",
+    desc: "Mapeamento e orquestração de fluxos com Power Automate, n8n e RPA: processamento em lote, integrações e relatórios sem retrabalho manual.",
   },
   {
     title: "Inteligência Artificial",
     icon: BrainCircuit,
-    desc: "Assistentes internos, OCR, LLMs e RAG embutidos em sistemas e processos — com arquitetura, governança e ownership do cliente.",
+    desc: "Assistentes internos, OCR, LLMs e RAG embutidos em sistemas e processos, com arquitetura, governança e ownership do cliente.",
   },
 ];
 
@@ -56,11 +56,11 @@ export const AI_CAPABILITIES: {
 } = {
   title: "Inteligência Artificial & Automação Inteligente",
   description:
-    "Projetamos e embutimos capacidade de IA em aplicações e fluxos operacionais — com arquitetura sólida, segurança e transferência de conhecimento.",
+    "Projetamos e embutimos capacidade de IA em aplicações e fluxos operacionais, com arquitetura sólida, segurança e transferência de conhecimento.",
   offerings: [
     {
       title: "Automações",
-      desc: "Power Automate, n8n e orquestração entre ERP, CRM, e-mail e planilhas — fluxos previsíveis e auditáveis.",
+      desc: "Power Automate, n8n e orquestração entre ERP, CRM, e-mail e planilhas: fluxos previsíveis e auditáveis.",
     },
     {
       title: "IA generativa",

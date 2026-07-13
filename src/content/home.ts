@@ -38,7 +38,7 @@ export const HOME_SERVICES: {
   {
     icon: BrainCircuit,
     title: "Automação e IA",
-    desc: "Automações com Power Automate e n8n, LLMs e RAG embutidos nos processos — para reduzir custo e ciclo operacional.",
+    desc: "Automações com Power Automate e n8n, LLMs e RAG embutidos nos processos, para reduzir custo e ciclo operacional.",
   },
 ];
 
@@ -47,14 +47,14 @@ export const HOME_AI: {
   description: string;
   pillars: { icon: LucideIcon; title: string; desc: string }[];
 } = {
-  title: "IA aplicada à operação — sem teatro",
+  title: "IA aplicada à operação",
   description:
-    "Integramos automações, modelos e conhecimento interno aos sistemas que você já usa. Critério de engenharia: onde o modelo gera eficiência mensurável — e onde código clássico resolve melhor.",
+    "Integramos automações, modelos e conhecimento interno aos sistemas que você já usa. Critério de engenharia: onde o modelo gera eficiência mensurável, e onde código clássico resolve melhor.",
   pillars: [
     {
       icon: Workflow,
       title: "Automações",
-      desc: "Fluxos com Power Automate e n8n conectando ERP, CRM, e-mail e planilhas — menos retrabalho, mais previsibilidade.",
+      desc: "Fluxos com Power Automate e n8n conectando ERP, CRM, e-mail e planilhas: menos retrabalho, mais previsibilidade.",
     },
     {
       icon: Bot,
@@ -64,7 +64,7 @@ export const HOME_AI: {
     {
       icon: FileSearch,
       title: "RAG e conhecimento",
-      desc: "Busca semântica em documentos, políticas e bases internas — respostas com contexto e rastreabilidade.",
+      desc: "Busca semântica em documentos, políticas e bases internas: respostas com contexto e rastreabilidade.",
     },
   ],
 };

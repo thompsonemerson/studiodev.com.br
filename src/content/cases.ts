@@ -15,7 +15,7 @@ export const CASES = [
     challenge:
       "Equipe sobrecarregada com análise manual de documentos não estruturados (PDFs, formulários e anexos), gerando gargalos e atrasos nas aprovações de crédito.",
     solution:
-      "Pipeline de automação com OCR e LLM: extração estruturada de dados dos documentos, cruzamento com bases internas e públicas, e pré-aprovação assistida nos fluxos de crédito — com trilha de auditoria para a equipe humana.",
+      "Pipeline de automação com OCR e LLM: extração estruturada de dados dos documentos, cruzamento com bases internas e públicas, e pré-aprovação assistida nos fluxos de crédito, com trilha de auditoria para a equipe humana.",
     result:
       "Aumento da capacidade de análise em 300% sem necessidade de aumento de quadro de funcionários.",
   },
@@ -37,21 +37,21 @@ export const AI_SCENARIOS = [
     problem:
       "Equipes de suporte e operação perdem tempo buscando procedimentos em pastas, wikis e e-mails desatualizados.",
     approach:
-      "Indexação semântica de documentos e políticas internas; assistente com respostas contextualizadas e referência à fonte — integrado ao canal que a equipe já usa.",
+      "Indexação semântica de documentos e políticas internas; assistente com respostas contextualizadas e referência à fonte, integrado ao canal que a equipe já usa.",
   },
   {
     title: "Classificação e roteamento de demanda",
     problem:
       "Alto volume de e-mails e chamados sem triagem consistente, gerando fila e SLA comprometido.",
     approach:
-      "Modelo de classificação + regras de negócio: priorização, roteamento para filas corretas e rascunhos de resposta — com revisão humana onde o risco exige.",
+      "Modelo de classificação + regras de negócio: priorização, roteamento para filas corretas e rascunhos de resposta, com revisão humana onde o risco exige.",
   },
   {
     title: "Orquestração ERP ↔ CRM ↔ escritório",
     problem:
       "Dados e aprovações travados entre sistemas e planilhas; trabalho manual para manter o fluxo vivo.",
     approach:
-      "Automações com Power Automate ou n8n no meio do processo — e, quando faz sentido, LLM para extrair ou resumir conteúdo antes de gravar no sistema de registro.",
+      "Automações com Power Automate ou n8n no meio do processo e, quando faz sentido, LLM para extrair ou resumir conteúdo antes de gravar no sistema de registro.",
   },
 ] as const;
 
