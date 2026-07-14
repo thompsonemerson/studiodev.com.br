@@ -51,21 +51,25 @@ src/
 | Seção de uma página específica | `features/{domínio}/` |
 | Nova rota | `pages/` + `routes.tsx` |
 
-## Formulário de contato (Resend)
+## Formulário de contato (Resend + Turnstile)
 
-O envio do formulário em `/contato` passa por uma Vercel Serverless Function (`api/contact.ts`) que dispara e-mail via [Resend](https://resend.com). A API key fica apenas no servidor.
+O envio do formulário em `/contato` passa por uma Vercel Serverless Function (`api/contact.ts`) que valida anti-spam (honeypot + Cloudflare Turnstile) e dispara e-mail via [Resend](https://resend.com). Segredos ficam apenas no servidor.
 
 ### Variáveis de ambiente
 
 Copie `.env.example` para `.env` e preencha:
 
-| Variável | Descrição |
-|----------|-----------|
-| `RESEND_API_KEY` | Chave da API Resend |
-| `CONTACT_TO_EMAIL` | Destino (padrão: `contato@studiodev.com.br`) |
-| `CONTACT_FROM_EMAIL` | Remetente no subdomínio verificado (ex: `contato@updates.studiodev.com.br`) |
+| Variável | Onde | Descrição |
+|----------|------|-----------|
+| `RESEND_API_KEY` | Server | Chave da API Resend |
+| `CONTACT_TO_EMAIL` | Server | Destino (padrão: `contato@studiodev.com.br`) |
+| `CONTACT_FROM_EMAIL` | Server | Remetente no subdomínio verificado |
+| `VITE_TURNSTILE_SITE_KEY` | Client | Site key do widget Turnstile |
+| `TURNSTILE_SECRET_KEY` | Server | Secret key para `siteverify` |
 
 Na Vercel, configure as mesmas variáveis em **Production** e **Preview** (Settings → Environment Variables). O domínio `studiodev.com.br` precisa estar verificado no Resend antes do deploy.
+
+**Turnstile:** crie um widget em [Cloudflare Dashboard → Turnstile](https://dash.cloudflare.com/?to=/:account/turnstile) (modo Managed). Em local, as keys dummy do `.env.example` sempre passam ([docs de teste](https://developers.cloudflare.com/turnstile/troubleshooting/testing/)).
 
 **`.env` vs `.env.local`**
 

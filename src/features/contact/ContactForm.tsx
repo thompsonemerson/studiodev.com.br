@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Button } from "@/components/ui/button";
 import { useContactForm } from "@/hooks/useContactForm";
 
@@ -13,8 +15,29 @@ const INTEREST_OPTIONS = [
 const inputClassName =
   "w-full border border-slate-300 rounded px-4 py-2.5 text-slate-900 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all";
 
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
+
 export function ContactForm() {
-  const { form, loading, status, updateField, handleSubmit } = useContactForm();
+  const {
+    form,
+    loading,
+    status,
+    updateField,
+    handleSubmit,
+    onTurnstileSuccess,
+    onTurnstileExpire,
+    onTurnstileError,
+    registerTurnstileReset,
+  } = useContactForm();
+
+  const turnstileRef = useRef<TurnstileInstance | null>(null);
+
+  useEffect(() => {
+    registerTurnstileReset(() => {
+      turnstileRef.current?.reset();
+    });
+    return () => registerTurnstileReset(null);
+  }, [registerTurnstileReset]);
 
   return (
     <form onSubmit={handleSubmit} className="relative space-y-6" noValidate>
@@ -135,6 +158,21 @@ export function ContactForm() {
       </div>
 
       <div className="pt-2 space-y-4">
+        {TURNSTILE_SITE_KEY ? (
+          <Turnstile
+            ref={turnstileRef}
+            siteKey={TURNSTILE_SITE_KEY}
+            onSuccess={onTurnstileSuccess}
+            onExpire={onTurnstileExpire}
+            onError={onTurnstileError}
+            options={{ theme: "light", size: "normal" }}
+          />
+        ) : (
+          <p role="alert" className="text-sm text-red-700">
+            Captcha não configurado. Defina VITE_TURNSTILE_SITE_KEY.
+          </p>
+        )}
+
         <Button type="submit" variant="primary" size="lg" className="w-full md:w-auto" disabled={loading}>
           {loading ? "Processando..." : "Enviar Solicitação Comercial"}
         </Button>
