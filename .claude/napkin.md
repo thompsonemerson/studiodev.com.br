@@ -20,8 +20,8 @@
 2. **[2026-06-09] cn() lives in lib/cn.ts**
    Do instead: never put utils inside `components/ui/`.
 
-3. **[2026-06-09] Contact form is client-only placeholder**
-   Do instead: wire `useContactForm` to backend/CRM when API exists; keep honeypot + validation.
+3. **[2026-07-14] Contact anti-spam = honeypot + Turnstile**
+   Do instead: keep honeypot; verify `turnstileToken` in `api/contact.ts` via `api/turnstile.ts`; set `VITE_TURNSTILE_SITE_KEY` + `TURNSTILE_SECRET_KEY`. Rate limit (Upstash) só se flood persistir.
 
 4. **[2026-06-09] Animations are CSS-first, no motion lib**
    Do instead: use `src/styles/animations.css` + `Reveal` (IntersectionObserver); hero LCP via `OptimizedImage priority` + preload in `index.html`.
