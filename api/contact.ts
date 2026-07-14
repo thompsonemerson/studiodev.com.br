@@ -5,6 +5,7 @@ import {
   buildContactLeadText,
   renderContactLeadEmail,
 } from "./contact-email";
+import { getRequestIp, verifyTurnstileToken } from "./turnstile";
 import {
   isHoneypotTriggered,
   sanitizeContactPayload,
@@ -13,6 +14,9 @@ import {
 
 const DEFAULT_TO_EMAIL = "contato@studiodev.com.br";
 const DEFAULT_FROM_EMAIL = "contato@updates.studiodev.com.br";
+
+const CAPTCHA_ERROR_MESSAGE =
+  "Não foi possível verificar o envio. Atualize a página e tente novamente.";
 
 function json(res: VercelResponse, status: number, body: { ok: boolean; error?: string }) {
   return res.status(status).json(body);
@@ -36,6 +40,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (isHoneypotTriggered(payload)) {
     return json(res, 200, { ok: true });
+  }
+
+  const turnstileToken = String(raw?.turnstileToken ?? "");
+  const turnstileOk = await verifyTurnstileToken(turnstileToken, getRequestIp(req));
+  if (!turnstileOk) {
+    return json(res, 400, { ok: false, error: CAPTCHA_ERROR_MESSAGE });
   }
 
   const validationError = validateContactPayload(payload);
